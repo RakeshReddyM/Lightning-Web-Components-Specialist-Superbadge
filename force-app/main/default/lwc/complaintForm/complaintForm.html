@@ -1,0 +1,26 @@
+<template>
+
+    <lightning-card title="New Complaint Form">
+        <lightning-record-edit-form object-api-name="Case" record-id={recordId} onsubmit={handlesubmit} onsuccess={successhandler} onerror={errorhandler}>
+            <lightning-messages>
+            </lightning-messages>
+            <lightning-layout >
+                <lightning-layout-item size="6" padding="around-small">
+                    <lightning-input-field field-name="AccountId" required></lightning-input-field>
+                    <lightning-input-field field-name="Status"></lightning-input-field>
+                    <lightning-input-field field-name="Origin"></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <lightning-record-edit-form object-api-name="Case">
+                        <lightning-input-field field-name="ContactId"></lightning-input-field>
+                        <lightning-input-field field-name="Priority" class="priority"></lightning-input-field>
+                        <lightning-input-field field-name="Reason"></lightning-input-field>
+                    </lightning-record-edit-form>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-button type="submit" label="Create Case" class="slds-m-around_medium" variant="brand"></lightning-button>
+            <lightning-button type="cancel" label="Cancel" class="slds-m-around_medium"></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+
+</template>

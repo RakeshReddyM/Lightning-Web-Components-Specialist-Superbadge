@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Contacts" icon-name="standard:contact">
+        <div class="slds-m-around_small">
+            <template if:true={contacts.data}>
+                <template for:each={contacts.data} for:item="contact">
+                    <lightning-card key={contact.Id}>
+                        <lightning-input key={contact.Id} label="Name" value={contact.Name} readonly></lightning-input>
+                        <lightning-input key={contact.Id} label="Account Name" value={contact.Account.Name} readonly>
+                        </lightning-input>
+                        <lightning-input key={contact.Id} label="Phone" value={contact.Phone} readonly>
+                        </lightning-input>
+                        <lightning-button key={contact.Id} label='View' variant='brand' onclick={handleClick}
+                            id={contact.Id}></lightning-button>
+                    </lightning-card>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

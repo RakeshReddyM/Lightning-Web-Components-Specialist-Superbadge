@@ -1,0 +1,22 @@
+<template>
+
+    <lightning-card title="Search Contacts" icon-name="standard:contact">
+        <div class="slds-m-around_small">
+            <lightning-input type="search" label="Search" placeholder='Search Contact.....' onchange={handlechange}>
+            </lightning-input>
+            <template if:true={data}>
+            <div class="slds-m-top_medium">
+                <lightning-datatable
+                key-field="Id"
+                data={data}
+                columns={columns}
+                onsave={handleSave}
+                draft-values={draftValues}
+                hide-checkbox-column>
+                </lightning-datatable>
+            </div>
+        </template>
+        </div>
+    </lightning-card>
+    
+</template>

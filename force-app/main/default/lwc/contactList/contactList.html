@@ -1,0 +1,16 @@
+<template>
+
+    <lightning-card title="contactList">
+        <template if:true={contacts.data}>
+
+            <lightning-datatable columns={columns} data={contacts.data} key-field="Id"> </lightning-datatable>
+
+        </template>
+
+        <template if:true={errors}>
+            <div>{errors}</div>
+        </template>
+
+    </lightning-card>
+
+</template>
